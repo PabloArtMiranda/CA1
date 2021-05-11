@@ -1,3 +1,7 @@
+
+
+//STAFF PASSWORD CHECKER
+
 (function(){
     var password = document.querySelector('.password');
     
@@ -101,10 +105,11 @@
     
   })();
 
-  $.ajax({
-    url: 'https://randomuser.me/api/',
-    dataType: 'json',
-    success: function(data) {
-      console.log(data);
-    }
-  });
+ //RANDOM USER GENERATOR
+
+
+
+fetch(`https://randomuser.me/api/?results=${amount}`, { method: 'get' })
+  .then(response => response.json())
+  .then(data => data.results.forEach(result => profiles.innerHTML += template(result)))
+  .catch(error => console.log(error));
