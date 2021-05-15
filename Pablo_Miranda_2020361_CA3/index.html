@@ -8,45 +8,514 @@
 
         <!---Bootstrap frameworK --->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!---CSS styleseet --->
+    
+        <!---CSS styleseet --->
     <link rel="stylesheet" href="css/style.css">
+        <!---script --->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/script.js"> defer</script>
+
+
+
 </head>
 
 <body>
 
-<div class="jumbotron">
-    <div>  
-      <h2>Pablo Miranda</h2>
-      <h4>Student Numer:2020361</h4>
-    </div>
-</div>
+  <div class="jumbotron">
+      <div>  
+        <h2>Pablo Miranda</h2>
+        <h4>Student Numer:2020361</h4>
+      </div>
+  </div>
 
-    <!-- STAFF PASSWORD CHECKER</a> -->
-    <Div class="container"> 
-      <form>
-        <label for="password">Staff Password Validator</label>
-        <input class="password" name="password" type="text" />
-      
-        <ul class="helper-text">
-          <li class="length">Must be at least 8 characters long.</li>
-          <li class="lowercase">Must contain a lowercase letter.</li>
-          <li class="uppercase">Must contain an uppercase letter.</li>
-          <li class="special">Must contain a number or special character.</li>
-        </ul>
-      </form>
+  <!-- STAFF PASSWORD CHECKER</a> -->
+  <div class="container"> 
+    <form>
+      <label for="password">Staff Password Validator</label>
+      <input class="password" name="password" type="text" />
+
+      <ul class="helper-text">
+        <li class="length">Must be at least 8 characters long.</li>
+        <li class="lowercase">Must contain a lowercase letter.</li>
+        <li class="uppercase">Must contain an uppercase letter.</li>
+        <li class="special">Must contain a number or special character.</li>
+      </ul>
+    </form>
 
   </div>
 
+  <!-- RANDOM USER GENERATOR -->
+  <script>
+  $('document').ready(function(){
+    
+    const url =' https://randomuser.me/api/ ';
 
 
-    <!-- RANDOM USER GENERATOR -->
 
-<div class="container">
-  
-</dIv>
+    fetch(url).then(parseJSON).then(updateProfile);
+    fetch(url).then(parseJSON).then(updateProfile1);
+    fetch(url).then(parseJSON).then(updateProfile2);
+    fetch(url).then(parseJSON).then(updateProfile3);
+    fetch(url).then(parseJSON).then(updateProfile4);
+    fetch(url).then(parseJSON).then(updateProfile5);
 
-    <!---javascript --->
-    <script src="js/script.js"></script>
+    function parseJSON (res){
+      return res.json();
+    }
 
+    function updateProfile (profile){
+      avatar.src = profile.results[0].picture.medium;
+      fullname.innerHTML = profile.results[0].name.first +" "+profile.results[0].name.last; 
+      username.innerHTML = profile.results[0].login.username; 
+      email.innerHTML = profile.results[0].email;
+      city.innerHTML = profile.results[0].location.city;
+      return 1;
+    }
+
+    function updateProfile1 (profile){
+      avatar1.src = profile.results[0].picture.medium;
+      fullname1.innerHTML = profile.results[0].name.first +" "+profile.results[0].name.last; 
+      username1.innerHTML = profile.results[0].login.username; 
+      email1.innerHTML = profile.results[0].email;
+      city1.innerHTML = profile.results[0].location.city;
+      return 1;
+    }
+    
+    function updateProfile2 (profile){
+      avatar2.src = profile.results[0].picture.medium;
+      fullname2.innerHTML = profile.results[0].name.first +" "+profile.results[0].name.last; 
+      username2.innerHTML = profile.results[0].login.username; 
+      email2.innerHTML = profile.results[0].email;
+      city2.innerHTML = profile.results[0].location.city;
+      return 1;
+    }
+
+    function updateProfile3 (profile){
+      avatar3.src = profile.results[0].picture.medium;
+      fullname3.innerHTML = profile.results[0].name.first +" "+profile.results[0].name.last; 
+      username3.innerHTML = profile.results[0].login.username; 
+      email3.innerHTML = profile.results[0].email;
+      city3.innerHTML = profile.results[0].location.city;
+      return 1;
+    }
+
+    function updateProfile4 (profile){
+      avatar4.src = profile.results[0].picture.medium;
+      fullname4.innerHTML = profile.results[0].name.first +" "+profile.results[0].name.last; 
+      username4.innerHTML = profile.results[0].login.username; 
+      email4.innerHTML = profile.results[0].email;
+      city4.innerHTML = profile.results[0].location.city;
+      return 1;
+    }
+
+    function updateProfile5 (profile){
+      avatar5.src = profile.results[0].picture.medium;
+      fullname5.innerHTML = profile.results[0].name.first +" "+profile.results[0].name.last; 
+      username5.innerHTML = profile.results[0].login.username; 
+      email5.innerHTML = profile.results[0].email;
+      city5.innerHTML = profile.results[0].location.city;
+      return 1;
+    }
+  }); 
+  </script>
+
+  <div class="container-sm">
+
+    <div class="container-sm">
+      <div class="container-sm">
+        <div class="col">
+        
+          <div class="row">
+            <div class="col-sm">
+              <div class="card-body">
+                <img class="card-img-top" id="avatar" src=""  />
+                <h5 class="card-title" id="fullname"></h5 >
+                <p  id="username"></p >
+                <p  class="card-text" id="email"></p >
+                <p class="card-text" id="city"></p>
+              </div>
+            </div>
+      
+            <div class="col-sm">
+              <div class="card-body">
+                <img class="card-img-top" id="avatar1" src=""  />
+                <h5 class="card-title" id="fullname1"></h5 >
+                <p  id="username1"></p >
+                <p  class="card-text" id="email1"></p >
+                <p class="card-text" id="city1"></p>
+              </div>
+            </div>
+      
+            <div class="col-sm">
+              <div class="card-body">
+                <img class="card-img-top" id="avatar2" src=""  />
+                <h5 class="card-title" id="fullname2"></h5 >
+                <p  id="username2"></p >
+                <p  class="card-text" id="email2"></p >
+                <p class="card-text" id="city2"></p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-sm">
+              <div class="card-body">
+                <img class="card-img-top" id="avatar3" src=""  />
+                <h5 class="card-title" id="fullname3"></h5 >
+                <p  id="username3"></p >
+                <p  class="card-text" id="email3"></p >
+                <p class="card-text" id="city3"></p>
+              </div>
+            </div>
+      
+            <div class="col-sm">
+              <div class="card-body">
+                <img class="card-img-top" id="avatar4" src=""  />
+                <h5 class="card-title" id="fullname4"></h5 >
+                <p  id="username4"></p >
+                <p  class="card-text" id="email4"></p >
+                <p class="card-text" id="city4"></p>
+              </div>
+            </div>
+      
+            <div class="col-sm">
+              <div class="card-body">
+                <img class="card-img-top" id="avatar5" src=""  />
+                <h5 class="card-title" id="fullname5"></h5 >
+                <p  id="username5"></p >
+                <p  class="card-text" id="email5"></p >
+                <p class="card-text" id="city5"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+  <!-- MENU -->
+  <div class="container-fluid">
+    <div class="container">
+      <h1>Menu Options</h1>
+      <!-- starters -->
+      <div class="row">
+        <div class="col">
+          <h4>Starters</h4>
+        </div>
+        
+        <div class="col">
+          <h4>Quantity</h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="">
+            <label class="form-check-label">Chicken Wings</label>
+          </div>
+        </div>
+        
+        <div class="col">
+          <input class="" type="input" value="" id="starters1">
+        </div>
+      </div>   
+
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="">
+            <label class="form-check-label">Salad</label>
+          </div>
+        </div>
+        
+        <div class="col">
+          <input class="" type="input" value="" id="starters2">
+        </div>
+      </div> 
+      
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="">
+            <label class="form-check-label">Vegetarian Salad</label>
+          </div>
+        </div>
+        
+        <div class="col">
+          <input class="" type="input" value="" id="starters3">
+        </div>
+      </div>   
+      <!-- main -->
+      <div class="row">
+        <div class="col">
+          <h4>Main</h4>
+        </div>
+        
+        <div class="col">
+          <h4></h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="">
+            <label class="form-check-label">Lasanha</label>
+          </div>
+        </div>
+        
+        <div class="col">
+          <input class="" type="input" value="" id="main1">
+        </div>
+      </div>   
+
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="">
+            <label class="form-check-label">Pizza</label>
+          </div>
+        </div>
+        
+        <div class="col">
+          <input class="" type="input" value="" id="main2">
+        </div>
+      </div> 
+      
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="">
+            <label class="form-check-label">Vegetarian Pizza</label>
+          </div>
+        </div>
+        
+        <div class="col">
+          <input class="" type="input" value="" id="main3">
+        </div>
+      </div>  
+      <!-- desert -->
+      <div class="row">
+        <div class="col">
+          <h4>Desert</h4>
+        </div>
+        
+        <div class="col">
+          <h4></h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="">
+            <label class="form-check-label">Almond Cookie</label>
+          </div>
+        </div>
+        
+        <div class="col">
+          <input class="" type="input" value="" id="dessert1">
+        </div>
+      </div>   
+
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="">
+            <label class="form-check-label">Danish pastry</label>
+          </div>
+        </div>
+        
+        <div class="col">
+          <input class="" type="input" value="" id="dessert2">
+        </div>
+      </div> 
+      
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="">
+            <label class="form-check-label">Vegan Cake</label>
+          </div>
+        </div>
+        
+        <div class="col">
+          <input class="" type="input" value="" id="dessert3">
+        </div>
+      </div>
+      <!-- drink -->
+      <div class="row">
+        <div class="col">
+          <h4>Drinks</h4>
+        </div>
+        
+        <div class="col">
+          <h4></h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="">
+            <label class="form-check-label">Coke</label>
+          </div>
+        </div>
+        
+        <div class="col">
+          <input class="" type="input" value="" id="drinks1">
+        </div>
+      </div>   
+
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="">
+            <label class="form-check-label">Juice</label>
+          </div>
+        </div>
+        
+        <div class="col">
+          <input class="" type="input" value="" id="drinks2">
+        </div>
+      </div> 
+      
+      <div class="row">
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="">
+            <label class="form-check-label">Water</label>
+          </div>
+        </div>
+        
+        <div class="col">
+          <input class="" type="input" value="" id="drinks3">
+        </div>
+      </div>                
+    </div>
+  </div>
+
+  <!-- BILL -->
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Bill</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <span>TOTAL BILL</span>
+        </div>
+        <div class="col">
+          <input class="" type="input" value="" id="">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <span>STARTERS</span>
+        </div>
+        <div class="col">
+          <input class="" type="input" value="" id="starters">
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <span>MAIN</span>
+        </div>
+        <div class="col">
+          <input class="" type="input" value="" id="main">
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <span>DESERT</span>
+        </div>
+        <div class="col">
+          <input class="" type="input" value="" id="dessert">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <span>DRINKS</span>
+        </div>
+        <div class="col">
+          <input class="" type="input" value="" id="drinks">
+        </div>
+      </div>  
+
+      <div class="row">
+        <div class="col">
+          <span>VEGETARIAN COST</span>
+        </div>
+        <div class="col">
+          <input class="" type="input" value="" id="vegetarian">
+        </div>
+      </div> 
+      
+      <div class="row">
+        <div class="col">
+          <span>NON VEGETARIAN COST</span>
+        </div>
+        <div class="col">
+          <input class="" type="input" value="" id="nonVegetarian">
+        </div>
+      </div>  
+      <div class="footer">
+        <button onclick="calculate()" class="btn btn-primary" id="btn">CALCULATE</button>
+      </div>      
+      
+    </div>
+  </div>
+  <script>
+    function calculate (){
+      var total = 0;
+      var starters = 0;
+      var main = 0;
+      var dessert = 0;
+      var drinks = 0;
+      var vegetarian = 0;
+      var nonVegetarian = 0;
+
+      starters = (parseInt(document.getElementById('starters1').value) || 0) 
+      + (parseInt(document.getElementById('starters2').value) || 0)
+      + (parseInt(document.getElementById('starters3').value) || 0);
+      document.getElementById('starters').value = starters;
+
+      main = (parseInt(document.getElementById('main1').value) || 0) 
+      + (parseInt(document.getElementById('main2').value) || 0)
+      + (parseInt(document.getElementById('main3').value) || 0);
+      document.getElementById('main').value = main;    
+      
+      dessert = (parseInt(document.getElementById('dessert1').value) || 0) 
+      + (parseInt(document.getElementById('dessert2').value) || 0)
+      + (parseInt(document.getElementById('dessert3').value) || 0);
+      document.getElementById('dessert').value = dessert;      
+
+      drinks = (parseInt(document.getElementById('drinks1').value) || 0) 
+      + (parseInt(document.getElementById('drinks2').value) || 0)
+      + (parseInt(document.getElementById('drinks3').value) || 0);
+      document.getElementById('drinks').value = drinks;   
+      
+      vegetarian = (parseInt(document.getElementById('starters1').value) || 0) 
+      + (parseInt(document.getElementById('starters2').value) || 0)
+      + (parseInt(document.getElementById('starters3').value) || 0);
+      document.getElementById('starters').value = starters;
+
+      nonVegetarian = (parseInt(document.getElementById('main1').value) || 0) 
+      + (parseInt(document.getElementById('main2').value) || 0)
+      + (parseInt(document.getElementById('main3').value) || 0);
+      document.getElementById('main').value = main;          
+    }
+  </script>
 </body>
 </html>
