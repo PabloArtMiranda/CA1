@@ -95,7 +95,7 @@
     
     function hasClass(el, className) {
       if (el.classList) {
-        console.log(el.classList);
+        //console.log(el.classList);
         return el.classList.contains(className);  
       }
       else {
@@ -105,11 +105,10 @@
     
   })();
 
- //RANDOM USER GENERATOR
+ //page2
+
+
+ 
 
 
 
-fetch(`https://randomuser.me/api/?results=${amount}`, { method: 'get' })
-  .then(response => response.json())
-  .then(data => data.results.forEach(result => profiles.innerHTML += template(result)))
-  .catch(error => console.log(error));
